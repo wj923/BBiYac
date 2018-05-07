@@ -1,0 +1,66 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+    <fragment xmlns:map="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        tools:context=".NearPharmacyActivity"
+        class="com.google.android.gms.maps.SupportMapFragment"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Button
+            android:id="@+id/my_location"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/my_location"
+            android:layout_margin="10dp"
+            android:layout_alignParentRight="true"/>
+        <Button
+            android:id="@+id/run_pharmacy"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/opening"
+            android:layout_marginTop="10dp"
+            android:layout_toLeftOf="@id/my_location"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/pharmacy_window"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:translationY="500dp">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/pharmacy"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/round_layout"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="25dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:paddingBottom="5dp"
+            tools:listitem="@layout/item_list"/>
+
+        <Button
+            android:id="@+id/up_down_button"
+            android:layout_width="80dp"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:layout_marginRight="20dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/list_up_button"
+            android:onClick="listUpDown"/>
+    </RelativeLayout>
+
+</FrameLayout>
